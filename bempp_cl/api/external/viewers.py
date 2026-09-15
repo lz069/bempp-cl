@@ -270,7 +270,7 @@ def visualize_with_pyvista(obj, mode=None, transformation=None, notebook_toggle=
         else:
             raise ValueError("input bool value")
     else:
-        raise ValueError("Unsupported type")
+        raise TypeError("Unsupported type")
 
 def enable_gmsh_viewer():
     """Change plotting default to Gmsh."""
