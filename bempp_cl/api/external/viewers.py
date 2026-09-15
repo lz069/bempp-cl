@@ -216,7 +216,6 @@ def visualize_with_paraview(obj, mode=None, transformation=None):
     subprocess.Popen([pview, outfile.name])
 
 def visualize_with_pyvista(obj, mode=None, transformation=None, notebook_toggle=True):
-    """View a grid or grid function in an IPython Notebook."""
     from bempp_cl.api import GridFunction
     from bempp_cl.api.grid.grid import Grid
     import numpy as np
