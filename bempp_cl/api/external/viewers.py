@@ -111,7 +111,8 @@ def visualize_with_jupyter_notebook(obj, mode=None, transformation=None):
         )
         fig["layout"]["scene"].update(go.layout.Scene(aspectmode="data"))
         plotly.offline.iplot(fig)
-
+    else:
+        raise TypeError("Unsupported type")
 
 def visualize_with_gmsh(obj, mode=None, transformation=None):
     """
@@ -155,6 +156,8 @@ def visualize_with_gmsh(obj, mode=None, transformation=None):
             transformation=transformation,
             data_type=mode,
         )
+    else:
+        raise TypeError("Unsupported type")
     outfile.close()
 
     gmsh_path = shutil.which("gmsh")
@@ -211,6 +214,8 @@ def visualize_with_paraview(obj, mode=None, transformation=None):
             transformation=transformation,
             data_type=mode,
         )
+    else:
+        raise TypeError("Unsupported type")
     outfile.close()
 
     subprocess.Popen([pview, outfile.name])
