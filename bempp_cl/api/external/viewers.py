@@ -240,7 +240,9 @@ def visualize_with_pyvista(obj, mode=None, transformation=None, notebook_toggle=
         elif notebook_toggle == False:
             pl = BackgroundPlotter()
             pl.add_mesh(mesh, color="#FFDEAD", lighting=True, show_edges=True, ambient=0.6,diffuse=1, specular=0.2, specular_power=10)
-
+        else:
+            Exception
+        
     elif isinstance(obj, GridFunction):
 
         grid = obj.space.grid
@@ -265,7 +267,10 @@ def visualize_with_pyvista(obj, mode=None, transformation=None, notebook_toggle=
         elif notebook_toggle == False:
             pl2 = BackgroundPlotter()
             pl2.add_mesh(mesh, scalars="data", categories=True, cmap="jet", show_edges=True, lighting=True, ambient=0.6,diffuse=1, specular=0.2, specular_power=10)
-
+        else:
+            Exception
+    else:
+        raise ValueError("Unsupported type")
 
 def enable_gmsh_viewer():
     """Change plotting default to Gmsh."""
